@@ -6,6 +6,10 @@ public class Phone {
     int size;
     int price;
 
+    public Phone(String os, String type,int size, int price ) {
+
+    }
+
     public static void sound(String modelPhone) {
         System.out.println("We like: " + modelPhone);
     }

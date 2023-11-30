@@ -3,11 +3,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        Samsung samsung = new Samsung();
-        Iphone iphone = new Iphone();
-        Nokia nokia = new Nokia();
-        Huawei huawei = new Huawei();
-        Galaxy galaxy = new Galaxy();
+        Samsung samsung = new Samsung("Android", "Smart", 30, 15000);
+        Iphone iphone = new Iphone("iOS", "Smart", 25, 20000);
+        Nokia nokia = new Nokia("Android", "Smart", 20, 10000);
+        Huawei huawei = new Huawei("Android", "Smart", 20, 5000);
+        Galaxy galaxy = new Galaxy("Android", "Smart", 20, 10000);
 
        samsung.os = "Android";
        iphone.price = 20000;
@@ -23,10 +23,8 @@ public class Main {
         galaxy.sms();
         nokia.sms();
 
-        Iphone iphone1 = new Iphone("Red");
-        System.out.println("Iphone color is:" + iphone1.color);
+       System.out.println(galaxy.getModelGalaxy());
 
-        System.out.println(galaxy.getModelGalaxy());
 
 
 

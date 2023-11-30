@@ -2,8 +2,12 @@ public class Huawei extends Phone{
 
     private String country;
 
-    public void kindOfBrowser(String indOfBrowser) {
-        System.out.println("Browser is: " + indOfBrowser);
+    public Huawei(String os, String type,int size, int price) {
+        super(os, type, size, price);
+    }
+
+    public void printKindOfBrowser(String printKindOfBrowser) {
+        System.out.println("Browser is: " + printKindOfBrowser);
     }
 
     public String getCountry() {
