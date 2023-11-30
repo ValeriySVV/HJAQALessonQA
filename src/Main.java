@@ -1,13 +1,13 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        Samsung samsung = new Samsung("Android", "Smart", 30, 15000);
+        Samsung samsung = new Samsung("Android", "Smart", 30, 15000, true);
         Iphone iphone = new Iphone("iOS", "Smart", 25, 20000);
         Nokia nokia = new Nokia("Android", "Smart", 20, 10000);
         Huawei huawei = new Huawei("Android", "Smart", 20, 5000);
-        Galaxy galaxy = new Galaxy("Android", "Smart", 20, 10000);
+        Galaxy galaxy = new Galaxy("Android", "Smart", 20, 10000, true, "J6");
 
        samsung.os = "Android";
        iphone.price = 20000;

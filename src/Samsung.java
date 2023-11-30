@@ -1,10 +1,11 @@
 public class Samsung extends Phone{
 
     private String design;
-    String usability;
+    boolean usability;
 
-    public Samsung(String os, String type,int size, int price) {
+    public Samsung(String os, String type,int size, int price, boolean usability) {
         super(os, type, size, price);
+        this.usability = usability;
 
     }
 
