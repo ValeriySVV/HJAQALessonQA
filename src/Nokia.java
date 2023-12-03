@@ -1,15 +1,11 @@
-public class Nokia extends Phone{
+public class Nokia extends  Phone implements Functional{
 
     private int year;
 
-    public Nokia(String os, String type,int size, int price) {
+    public Nokia(String os, String type, int size, int price, int year) {
         super(os, type, size, price);
+        this.year = year;
     }
-
-    public void yearCreate(int yearCreate) {
-        System.out.println("Date of create: " + yearCreate);
-    }
-
     public int getYear() {
         return year;
     }
@@ -17,8 +13,26 @@ public class Nokia extends Phone{
     public void setYear(int year) {
         this.year = year;
     }
+
     @Override
-    public void sms(){
-        System.out.println("SMS call - Call");
+    public void soundSms() {
+
+    }
+
+    @Override
+    public void soundCall() {
+
+    }
+
+
+    @Override
+    public void security(String password) {
+        System.out.println("Nokia security is" + password);
+
+    }
+
+    @Override
+    public void faceId(boolean faceId) {
+        Functional.super.faceId(faceId);
     }
 }

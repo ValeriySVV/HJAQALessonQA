@@ -1,28 +1,47 @@
-public class Samsung extends Phone{
+public class Samsung extends Phone implements Functional{
 
-    private String design;
+    private final String design;
     boolean usability;
 
-    public Samsung(String os, String type,int size, int price, boolean usability) {
-        super(os, type, size, price);
+    public Samsung(String model, String type, int size, int price, String design, boolean usability) {
+        super(model, type, size, price);
+        this.design = design;
         this.usability = usability;
-
-    }
-
-    public static void sound(String sound) {
-        System.out.println("Samsung sound: " + sound);
     }
 
     public String getDesign() {
         return design;
     }
 
+    public boolean isUsability() {
+        return usability;
+    }
 
+    public void setUsability(boolean usability) {
+        this.usability = usability;
+    }
 
     @Override
-    public void sms() {
-        System.out.println("SMS call - Dzin");
+    public void soundSms() {
+        System.out.println("Rock ring");
+
+    }
+
+    @Override
+    public void soundCall() {
+        System.out.println("Vibro");
+
     }
 
 
+    @Override
+    public void security(String password) {
+        System.out.println("Samsung security is" + password);
+
+    }
+
+    @Override
+    public void faceId(boolean faceId) {
+        Functional.super.faceId(faceId);
+    }
 }
