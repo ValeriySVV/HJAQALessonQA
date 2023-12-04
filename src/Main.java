@@ -7,6 +7,8 @@ public class Main {
 
         samsung.security(" PIN 0000");
         samsung.faceId(true);
+        samsung.soundCall();
+        samsung.soundSms();
 
         Iphone iphone = new IphoneBuilder()
                 .setOs("iOS")
@@ -17,6 +19,9 @@ public class Main {
                 .setVersion(13)
                 .createIphone();
         System.out.println(iphone.toString());
+
+        iphone.soundCall();
+        iphone.soundSms();
 
 
         var nokia = new Nokia("Android", "Smart", 20, 10000, 2020);

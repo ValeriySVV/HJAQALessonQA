@@ -36,11 +36,13 @@ public class Iphone extends Phone{
 
     @Override
     public void soundSms() {
+        System.out.println("Pin Pin");
 
     }
 
     @Override
     public void soundCall() {
+        System.out.println("Iphone Ring");
 
     }
 }
