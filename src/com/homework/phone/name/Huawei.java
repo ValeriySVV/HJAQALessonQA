@@ -1,4 +1,8 @@
-public class Huawei extends Phone{
+package com.homework.phone.name;
+
+import com.homework.phone.Phone;
+
+public class Huawei extends Phone {
 
     private String country;
 
@@ -23,5 +27,13 @@ public class Huawei extends Phone{
     @Override
     public void soundCall() {
 
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Huawei{");
+        sb.append("country='").append(country).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

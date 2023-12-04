@@ -1,3 +1,7 @@
+package com.builder_class;
+
+import com.homework.phone.name.Iphone;
+
 public class IphoneBuilder {
     private String os;
     private String type;

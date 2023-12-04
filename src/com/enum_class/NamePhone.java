@@ -1,3 +1,5 @@
+package com.enum_class;
+
 public enum NamePhone {
 
     Samsung,

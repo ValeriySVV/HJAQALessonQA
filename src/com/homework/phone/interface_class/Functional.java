@@ -1,3 +1,5 @@
+package com.homework.phone.interface_class;
+
 public interface Functional {
 
     boolean camera = true;

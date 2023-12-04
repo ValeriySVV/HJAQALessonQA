@@ -1,4 +1,8 @@
-public class Iphone extends Phone{
+package com.homework.phone.name;
+
+import com.homework.phone.Phone;
+
+public class Iphone extends Phone {
 
    private int version;
     private String color;
@@ -27,21 +31,23 @@ public class Iphone extends Phone{
     }
 
     @Override
-    public String toString() {
-        return "Iphone{" +
-                "version=" + version +
-                ", color='" + color + '\'' +
-                '}';
-    }
-
-    @Override
     public void soundSms() {
+        System.out.println("Pin Pin");
 
     }
 
     @Override
     public void soundCall() {
+        System.out.println("com.homework.phone.name.Iphone Ring");
 
+    }
+
+    @Override
+    public String toString() {
+        return "Iphone{" +
+                "version=" + version +
+                ", color='" + color + '\'' +
+                "} " + super.toString();
     }
 }
 

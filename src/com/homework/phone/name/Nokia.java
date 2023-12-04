@@ -1,4 +1,9 @@
-public class Nokia extends  Phone implements Functional{
+package com.homework.phone.name;
+
+import com.homework.phone.Phone;
+import com.homework.phone.interface_class.Functional;
+
+public class Nokia extends Phone implements Functional {
 
     private int year;
 
@@ -27,12 +32,20 @@ public class Nokia extends  Phone implements Functional{
 
     @Override
     public void security(String password) {
-        System.out.println("Nokia security is" + password);
+        System.out.println("com.homework.phone.name.Nokia security is" + password);
 
     }
 
     @Override
     public void faceId(boolean faceId) {
         Functional.super.faceId(faceId);
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Nokia{");
+        sb.append("year=").append(year);
+        sb.append('}');
+        return sb.toString();
     }
 }

@@ -1,10 +1,12 @@
+package com.homework.phone;
+
 public abstract class Phone {
 
     private String model;
     static String os;
     String type;
     int size;
-    int price;
+    static int price;
 
 
     public Phone(String model, String type, int size, int price) {
@@ -16,7 +18,7 @@ public abstract class Phone {
 
     @Override
     public String toString() {
-        return "Phone{" +
+        return "com.homework.phone.Phone{" +
                 "model='" + model + '\'' +
                 ", type='" + type + '\'' +
                 ", size=" + size +
