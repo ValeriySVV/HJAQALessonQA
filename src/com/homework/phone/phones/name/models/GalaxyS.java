@@ -1,6 +1,6 @@
-package com.homework.phone.name.models;
+package com.homework.phone.phones.name.models;
 
-import com.homework.phone.name.Samsung;
+import com.homework.phone.phones.name.Samsung;
 
 import java.util.StringJoiner;
 

@@ -1,4 +1,4 @@
-package com.homework.phone.name;
+package com.homework.phone.phones.name;
 
 import com.homework.phone.Phone;
 

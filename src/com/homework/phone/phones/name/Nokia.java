@@ -1,7 +1,7 @@
-package com.homework.phone.name;
+package com.homework.phone.phones.name;
 
 import com.homework.phone.Phone;
-import com.homework.phone.interface_class.Functional;
+import com.homework.phone.phones.interfaceFunction.Functional;
 
 public class Nokia extends Phone implements Functional {
 
@@ -32,7 +32,7 @@ public class Nokia extends Phone implements Functional {
 
     @Override
     public void security(String password) {
-        System.out.println("com.homework.phone.name.Nokia security is" + password);
+        System.out.println("name.com.homework.phone.phones.Nokia security is" + password);
 
     }
 

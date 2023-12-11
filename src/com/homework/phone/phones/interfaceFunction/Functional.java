@@ -1,4 +1,4 @@
-package com.homework.phone.interface_class;
+package com.homework.phone.phones.interfaceFunction;
 
 public interface Functional {
 

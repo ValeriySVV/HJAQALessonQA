@@ -1,4 +1,4 @@
-package com.homework.phone.name;
+package com.homework.phone.phones.name;
 
 import com.homework.phone.Phone;
 
@@ -38,7 +38,7 @@ public class Iphone extends Phone {
 
     @Override
     public void soundCall() {
-        System.out.println("com.homework.phone.name.Iphone Ring");
+        System.out.println("name.com.homework.phone.phones.Iphone Ring");
 
     }
 

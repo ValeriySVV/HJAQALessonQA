@@ -1,9 +1,9 @@
-import com.builder_class.IphoneBuilder;
-import com.homework.phone.name.Huawei;
-import com.homework.phone.name.Iphone;
-import com.homework.phone.name.Nokia;
-import com.homework.phone.name.Samsung;
-import com.homework.phone.name.models.GalaxyS;
+import com.homework.phone.phones.builders.IphoneBuilder;
+import com.homework.phone.phones.name.Huawei;
+import com.homework.phone.phones.name.Iphone;
+import com.homework.phone.phones.name.Nokia;
+import com.homework.phone.phones.name.Samsung;
+import com.homework.phone.phones.name.models.GalaxyS;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.

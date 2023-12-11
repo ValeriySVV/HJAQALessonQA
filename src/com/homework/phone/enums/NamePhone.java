@@ -1,4 +1,4 @@
-package com.enum_class;
+package com.homework.phone.enums;
 
 public enum NamePhone {
 
