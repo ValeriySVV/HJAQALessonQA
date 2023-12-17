@@ -1,0 +1,5 @@
+model;color;RAM;diagonal;camera;usability
+CalaxyS;Red;4;6.6;13;true
+CalaxyM;Green;8;6.5;12;false
+CalaxyA;Black;2;6.6;10;true
+CalaxyFlip;White;16;7.0;15;false
