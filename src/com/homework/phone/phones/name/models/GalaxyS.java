@@ -1,5 +1,6 @@
 package com.homework.phone.phones.name.models;
 
+import com.homework.phone.enums.NamePhone;
 import com.homework.phone.phones.name.Samsung;
 
 import java.util.StringJoiner;
@@ -11,6 +12,7 @@ public class GalaxyS extends Samsung {
     public GalaxyS(String model, String type, int size, int price, String design, boolean usability, String models) {
         super(model, type, size, price, design, usability);
         this.models = models;
+        name = NamePhone.GalaxyS;
     }
 
     public String getModels() {
@@ -23,9 +25,10 @@ public class GalaxyS extends Samsung {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", GalaxyS.class.getSimpleName() + "[", "]")
-                .add("models='" + models + "'")
-                .toString();
+        return "GalaxyS{" +
+                "models='" + models + '\'' +
+                ", name=" + name +
+                "} " + super.toString();
     }
 }
 

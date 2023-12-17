@@ -1,12 +1,15 @@
 package com.homework.phone.phones.name;
 
 import com.homework.phone.Phone;
+import com.homework.phone.enums.NamePhone;
 import com.homework.phone.phones.interfaceFunction.Functional;
 
 public class Samsung extends Phone implements Functional {
 
     private final String design;
-    boolean usability;
+    private boolean usability;
+
+    protected NamePhone name= null;
 
     public Samsung(String model, String type, int size, int price, String design, boolean usability) {
         super(model, type, size, price);
@@ -55,6 +58,7 @@ public class Samsung extends Phone implements Functional {
         return "Samsung{" +
                 "design='" + design + '\'' +
                 ", usability=" + usability +
-                '}';
+                ", name=" + name +
+                "} " + super.toString();
     }
 }
