@@ -5,5 +5,7 @@ public enum NamePhone {
     GalaxyA,
     GalaxyFlip,
     GalaxyM,
-    GalaxyS
+    GalaxyS,
+    Galaxy
+
 }

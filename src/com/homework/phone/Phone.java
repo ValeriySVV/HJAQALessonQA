@@ -2,18 +2,29 @@ package com.homework.phone;
 
 public abstract class Phone {
 
+    private String model;
+
     private String color;
     private int RAM = 16;
     private double diagonal;
     private int camera;
     private boolean usability = true;
 
-    public Phone(String color, int RAM, double diagonal, int camera, boolean usability) {
+    public Phone(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
         this.color = color;
         this.RAM = RAM;
         this.diagonal = diagonal;
         this.camera = camera;
         this.usability = usability;
+        this.model = model;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getColor() {
@@ -64,6 +75,7 @@ public abstract class Phone {
                 ", diagonal=" + diagonal +
                 ", camera=" + camera +
                 ", usability=" + usability +
+                ", model=" + model +
                 '}';
     }
 

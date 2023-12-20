@@ -3,14 +3,26 @@ package com.homework.phone.phones.name;
 import com.homework.phone.Phone;
 import com.homework.phone.enums.NamePhone;
 import com.homework.phone.phones.interfaceFunction.Functional;
+import com.homework.phone.phones.name.models.GalaxyM;
 
 public class Samsung extends Phone  {
 
 
     protected NamePhone name = null;
 
-    public Samsung(String color, int RAM, double diagonal, int camera, boolean usability) {
-        super(color, RAM, diagonal, camera, usability);
+    public Samsung(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
+        super(model, color, RAM, diagonal, camera, usability);
+        this.name = NamePhone.Galaxy;
+    }
+
+
+
+    public NamePhone getName() {
+        return name;
+    }
+
+    public void setName(NamePhone name) {
+        this.name = name;
     }
 
     @Override

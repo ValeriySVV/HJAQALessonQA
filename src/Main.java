@@ -1,3 +1,4 @@
+import com.homework.phone.enums.NamePhone;
 import com.homework.phone.phones.name.Samsung;
 import com.homework.phone.phones.name.models.GalaxyA;
 import com.homework.phone.phones.name.models.GalaxyFlip;
@@ -48,33 +49,42 @@ public class Main {
 
     public static void main(String[] args) {
         String[] data = readFileUsingScanner(FILE_NAME);
-        System.out.println(data);
+        //System.out.println(data);
 
-        for (int i = 1; i < data.length; i++) {
+
+        for (int i = 1; i < data.length-3; i++) {
             var pieces = data[i].split(";");
             Samsung samsung = null;
             //System.out.println(data);
             switch (pieces[0].toLowerCase()) {
                 case "galaxyS":
-                    samsung = new GalaxyA(pieces[1], Integer.parseInt(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
+                    samsung = new GalaxyA(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
+
                     break;
                 case "galaxyM":
-                    samsung =  new GalaxyFlip(pieces[1], Integer.parseInt(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
+                    samsung = new GalaxyFlip(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 case "galaxyA":
-                    samsung = new GalaxyM(pieces[1], Integer.parseInt(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
+                    samsung = new GalaxyM(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 case "galaxyFlip":
-                    samsung = new GalaxyS(pieces[1], Integer.parseInt(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
+                    samsung = new GalaxyS(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 default:
-                    samsung = new Samsung(pieces[1], Integer.parseInt(pieces[2]), Double.parseDouble(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
+                    samsung = new Samsung(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
 
             }
             System.out.println("Phone characteristics:" + samsung);
         }
+
     }
+
 
 
 

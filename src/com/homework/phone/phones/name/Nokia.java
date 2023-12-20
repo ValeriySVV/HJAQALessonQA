@@ -7,8 +7,8 @@ public class Nokia extends Phone implements Functional {
 
     private int year;
 
-    public Nokia(String color, int RAM, double diagonal, int camera, boolean usability, int year) {
-        super(color, RAM, diagonal, camera, usability);
+    public Nokia(String model, String color, int RAM, double diagonal, int camera, boolean usability, int year) {
+        super(model, color, RAM, diagonal, camera, usability);
         this.year = year;
     }
 

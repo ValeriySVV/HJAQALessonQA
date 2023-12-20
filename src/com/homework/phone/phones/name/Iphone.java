@@ -7,8 +7,8 @@ public class Iphone extends Phone {
    private int version;
     private String color;
 
-    public Iphone(String color, int RAM, double diagonal, int camera, boolean usability, int version, String color1) {
-        super(color, RAM, diagonal, camera, usability);
+    public Iphone(String model, String color, int RAM, double diagonal, int camera, boolean usability, int version, String color1) {
+        super(model, color, RAM, diagonal, camera, usability);
         this.version = version;
         this.color = color1;
     }
