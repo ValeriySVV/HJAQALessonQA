@@ -99,6 +99,3 @@ number;model;color;RAM;diagonal;camera;usability
 98;Galaxy A72 Lite;Lunar Gray;8;6.7;64;true
 99;Galaxy S21 Plus Ultra;Starlight Blue;12;6.7;12;true
 100;Galaxy A142s;Topaz;3;6.5;13;true
-
-
-
