@@ -52,7 +52,7 @@ public class Main {
         //System.out.println(data);
 
 
-        for (int i = 1; i < data.length-3; i++) {
+        for (int i = 1; i < data.length; i++) {
             var pieces = data[i].split(";");
             Samsung samsung = null;
             //System.out.println(data);
