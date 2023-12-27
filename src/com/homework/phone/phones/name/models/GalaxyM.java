@@ -5,8 +5,8 @@ import com.homework.phone.phones.name.Samsung;
 
 public class GalaxyM extends Samsung {
 
-    public GalaxyM(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
-        super(model, color, RAM, diagonal, camera, usability);
+    public GalaxyM(int id, String model, String color, int RAM, int camera, boolean usability) {
+        super(id, model, color, RAM, camera, usability);
         name = NamePhone.GalaxyM;
     }
 

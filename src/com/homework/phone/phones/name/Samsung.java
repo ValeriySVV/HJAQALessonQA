@@ -10,8 +10,8 @@ public class Samsung extends Phone  {
 
     protected NamePhone name = null;
 
-    public Samsung(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
-        super(model, color, RAM, diagonal, camera, usability);
+    public Samsung(int id, String model, String color, int RAM, int camera, boolean usability) {
+        super(id, model, color, RAM, camera, usability);
         this.name = NamePhone.Galaxy;
     }
 
@@ -41,6 +41,8 @@ public class Samsung extends Phone  {
     public void soundCall() {
 
     }
+
+
     /*
     @Override
     public void soundSms() {

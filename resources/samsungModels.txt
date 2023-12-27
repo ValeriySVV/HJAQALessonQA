@@ -1,4 +1,4 @@
-number;model;color;RAM;diagonal;camera;usability
+id;model;color;RAM;diagonal;camera;usability
 1;Galaxy Z Flip5;Red;8;6.2;48;true
 2;Galaxy S21;Phantom;8;6.2;12;true
 3;Galaxy A52;Awesome;6;6.5;64;true

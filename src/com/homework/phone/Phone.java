@@ -1,22 +1,33 @@
 package com.homework.phone;
 
-public abstract class Phone {
+public abstract class Phone  {
+
+    private int id;
 
     private String model;
 
     private String color;
     private int RAM = 16;
-    private double diagonal;
+    //private double diagonal;
     private int camera;
     private boolean usability = true;
 
-    public Phone(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
+    public Phone(int id, String model, String color, int RAM, int camera, boolean usability) {
         this.color = color;
         this.RAM = RAM;
-        this.diagonal = diagonal;
+        //this.diagonal = diagonal;
         this.camera = camera;
         this.usability = usability;
         this.model = model;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModel() {
@@ -43,13 +54,13 @@ public abstract class Phone {
         this.RAM = RAM;
     }
 
-    public double getDiagonal() {
+/*    public double getDiagonal() {
         return diagonal;
     }
 
     public void setDiagonal(double diagonal) {
         this.diagonal = diagonal;
-    }
+    }*/
 
     public int getCamera() {
         return camera;
@@ -70,12 +81,12 @@ public abstract class Phone {
     @Override
     public String toString() {
         return "Phone{" +
-                "color='" + color + '\'' +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
                 ", RAM=" + RAM +
-                ", diagonal=" + diagonal +
                 ", camera=" + camera +
                 ", usability=" + usability +
-                ", model=" + model +
                 '}';
     }
 

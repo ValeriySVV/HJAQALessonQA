@@ -7,8 +7,8 @@ import java.util.StringJoiner;
 
 public class GalaxyS extends Samsung {
 
-    public GalaxyS(String model, String color, int RAM, double diagonal, int camera, boolean usability) {
-        super(model, color, RAM, diagonal, camera, usability);
+    public GalaxyS(int id, String model, String color, int RAM, int camera, boolean usability) {
+        super(id, model, color, RAM, camera, usability);
         name = NamePhone.GalaxyS;
     }
 

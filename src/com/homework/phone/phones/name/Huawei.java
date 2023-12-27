@@ -6,8 +6,8 @@ public class Huawei extends Phone {
 
     private String country;
 
-    public Huawei(String model, String color, int RAM, double diagonal, int camera, boolean usability, String country) {
-        super(model, color, RAM, diagonal, camera, usability);
+    public Huawei(int id, String model, String color, int RAM, double diagonal, int camera, boolean usability, String country) {
+        super(id, model, color, RAM, camera, usability);
         this.country = country;
     }
 
@@ -36,6 +36,8 @@ public class Huawei extends Phone {
         sb.append('}');
         return sb.toString();
     }
+
+
 }
 
 

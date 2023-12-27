@@ -1,4 +1,3 @@
-import com.homework.phone.enums.NamePhone;
 import com.homework.phone.phones.name.Samsung;
 import com.homework.phone.phones.name.models.GalaxyA;
 import com.homework.phone.phones.name.models.GalaxyFlip;
@@ -7,10 +6,12 @@ import com.homework.phone.phones.name.models.GalaxyS;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -44,46 +45,73 @@ public class Main {
 
         scanner.close();
         return Arrays.copyOf(data.toArray(), data.size(), String[].class);
-
     }
 
-    public static void main(String[] args) {
-        String[] data = readFileUsingScanner(FILE_NAME);
+    private static List<Samsung> createSumsungObjects (String[] data) {
+        List<Samsung> samsungs = new LinkedList<>();
+        //String[] data = readFileUsingScanner(FILE_NAME);
         //System.out.println(data);
+        //createSumsungObjects(data);
+        getSumsungsData(data, samsungs);
+        return samsungs;
+    }
 
-
-        for (int i = 1; i < data.length; i++) {
+    private static void getSumsungsData(String[] data, List<Samsung> samsungs) {
+        //List<Samsung> samsungs = new LinkedList<>();
+        //getSamsungData(data, samsungs);
+        //Stream<Samsung> stream = samsungs.stream();
+        for (int i = 1; i > data.length; i++) {
             var pieces = data[i].split(";");
             Samsung samsung = null;
             //System.out.println(data);
-            switch (pieces[0].toLowerCase()) {
+            switch (pieces[4].toLowerCase()) {
                 case "galaxyS":
-                    samsung = new GalaxyA(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
-                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
-
+                    samsung = new GalaxyA(Integer.parseInt(pieces[0]), pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 case "galaxyM":
-                    samsung = new GalaxyFlip(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
-                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
+                    samsung = new GalaxyFlip(Integer.parseInt(pieces[0]), pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 case "galaxyA":
-                    samsung = new GalaxyM(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
-                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
+                    samsung = new GalaxyM(Integer.parseInt(pieces[0]), pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 case "galaxyFlip":
-                    samsung = new GalaxyS(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
-                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
+                    samsung = new GalaxyS(Integer.parseInt(pieces[0]), pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
                 default:
-                    samsung = new Samsung(pieces[1], pieces[2], Integer.parseInt(pieces[3]),
-                            Double.parseDouble(pieces[4]), Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
+                    samsung = new Samsung(Integer.parseInt(pieces[0]), pieces[1], pieces[2], Integer.parseInt(pieces[3]),
+                            Integer.parseInt(pieces[5]), Boolean.parseBoolean(pieces[6]));
                     break;
 
             }
+            samsungs.add(samsung);
             System.out.println("Phone characteristics:" + samsung);
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        List<Samsung> samsungs = new LinkedList<>();
+        String[] data = readFileUsingScanner(FILE_NAME);
+        //System.out.println(data);
+        samsungs = createSumsungObjects(data);
+        Stream <Samsung> stream = samsungs.stream();
+        stream
+                .filter(samsung -> samsung.getRAM() >6)
+                .forEach(System.out::println);
+
+        Stream <String> lines = Files.lines(Paths.get(FILE_NAME));
+        lines.forEach(System.out::println);
+
+
+        /*Map<Integer, String> samsungsMap  = stream.collect(Collectors.toMap(Samsung::getId, Samsung::getModel));
+        System.out.println(samsungsMap);*/
+
 
     }
+
 
 
 
