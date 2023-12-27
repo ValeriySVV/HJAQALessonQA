@@ -7,8 +7,6 @@ import com.homework.phone.phones.name.models.GalaxyS;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,6 +16,7 @@ import java.util.stream.Stream;
 public class Main {
 
     private static final String FILE_NAME = "resources/samsungModels.txt";
+    private static java.util.stream.Collectors Collectors;
 
     static String[] readFileUsingScanner(String fileName) {
 
@@ -47,20 +46,20 @@ public class Main {
         return Arrays.copyOf(data.toArray(), data.size(), String[].class);
     }
 
-    private static List<Samsung> createSumsungObjects (String[] data) {
-        List<Samsung> samsungs = new LinkedList<>();
+    private static List<Samsung> createSamsungObjects(String[] data) {
+        List<Samsung> samsungs = new Stack<>();
         //String[] data = readFileUsingScanner(FILE_NAME);
         //System.out.println(data);
         //createSumsungObjects(data);
-        getSumsungsData(data, samsungs);
+        getSamsungsData(data, samsungs);
         return samsungs;
     }
 
-    private static void getSumsungsData(String[] data, List<Samsung> samsungs) {
+    private static void getSamsungsData(String[] data, List<Samsung> samsungs) {
         //List<Samsung> samsungs = new LinkedList<>();
         //getSamsungData(data, samsungs);
         //Stream<Samsung> stream = samsungs.stream();
-        for (int i = 1; i > data.length; i++) {
+        for (int i = 1; i < data.length; i++) {
             var pieces = data[i].split(";");
             Samsung samsung = null;
             //System.out.println(data);
@@ -88,26 +87,32 @@ public class Main {
 
             }
             samsungs.add(samsung);
-            System.out.println("Phone characteristics:" + samsung);
+            //System.out.println("Phone characteristics:" + samsung);
         }
     }
 
     public static void main(String[] args) throws IOException {
-        List<Samsung> samsungs = new LinkedList<>();
+        List<Samsung> samsungs = new Stack<>();
         String[] data = readFileUsingScanner(FILE_NAME);
         //System.out.println(data);
-        samsungs = createSumsungObjects(data);
+        samsungs = createSamsungObjects(data);
         Stream <Samsung> stream = samsungs.stream();
-        stream
-                .filter(samsung -> samsung.getRAM() >6)
-                .forEach(System.out::println);
 
-        Stream <String> lines = Files.lines(Paths.get(FILE_NAME));
-        lines.forEach(System.out::println);
+                                            //Для роботи потрібно розкоментовувати кожен із фільтрів
+        //stream
+
+                //.sorted((s1, s2) -> (s2.getId() - s1.getId())) //сортування від більшого до меншого - згідно SortOrder зменшення
+
+                //.filter(samsung -> samsung.getId() > 11 && samsung.getId() < 29) //пропустити перші SortSkip - 11 і вивести SortOut перших - 17
+
+                //.filter(samsung -> samsung.getId() < 26) // Відфільтрувати за значенням довільно вибраного числового поля значення у кількісті FilterOut - 25
+                //.forEach(System.out::println);
+
+        Map<Integer, String> samsungsMap  = stream.collect(Collectors.toMap(Samsung::getId, Samsung::getModel)); //Map<Integer, String>, де key = значення поля id
+        System.out.println(samsungsMap);
 
 
-        /*Map<Integer, String> samsungsMap  = stream.collect(Collectors.toMap(Samsung::getId, Samsung::getModel));
-        System.out.println(samsungsMap);*/
+
 
 
     }
