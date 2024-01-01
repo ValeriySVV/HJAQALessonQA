@@ -96,20 +96,30 @@ public class Main {
         String[] data = readFileUsingScanner(FILE_NAME);
         //System.out.println(data);
         samsungs = createSamsungObjects(data);
-        Stream <Samsung> stream = samsungs.stream();
 
-                                            //Для роботи потрібно розкоментовувати кожен із фільтрів
-        //stream
+        Stream <Samsung> stream = samsungs.stream(); //сортування від більшого до меншого - згідно SortOrder зменшення
+        stream
 
-                //.sorted((s1, s2) -> (s2.getId() - s1.getId())) //сортування від більшого до меншого - згідно SortOrder зменшення
+                .sorted((s1, s2) -> (s2.getId() - s1.getId()))
+                .forEach(System.out::println);
+        System.out.println("Cортування від більшого до меншого - згідно SortOrder зменшення");
 
-                //.filter(samsung -> samsung.getId() > 11 && samsung.getId() < 29) //пропустити перші SortSkip - 11 і вивести SortOut перших - 17
+        Stream <Samsung> stream1 = samsungs.stream();//пропустити перші SortSkip - 11 і вивести SortOut перших - 17
+        stream1
 
-                //.filter(samsung -> samsung.getId() < 26) // Відфільтрувати за значенням довільно вибраного числового поля значення у кількісті FilterOut - 25
-                //.forEach(System.out::println);
+                .filter(samsung -> samsung.getId() > 11 && samsung.getId() <= 29)
+                .forEach(System.out::println);
+        System.out.println("Пропустити перші SortSkip - 11 і вивести SortOut перших - 17");
 
-        Map<Integer, String> samsungsMap  = stream.collect(Collectors.toMap(Samsung::getId, Samsung::getModel)); //Map<Integer, String>, де key = значення поля id
-        System.out.println(samsungsMap);
+        Stream <Samsung> stream2 = samsungs.stream();// Відфільтрувати за значенням довільно вибраного числового поля значення у кількісті FilterOut - 25
+        stream2
+
+                .filter(samsung -> samsung.getId() <=26)
+                .forEach(System.out::println);
+        System.out.println("Відфільтрувати за значенням довільно вибраного числового поля значення у кількісті FilterOut - 25");
+
+/*        Map<Integer, String> samsungsMap  = stream.collect(Collectors.toMap(Samsung::getId, Samsung::getModel)); //Map<Integer, String>, де key = значення поля id
+        System.out.println(samsungsMap);*/
 
 
 
